@@ -1,0 +1,32 @@
+body {
+  margin: 2em;
+  background-color: #eceff4;
+  color: #434c5e;
+  font-size: 18pt;
+}
+
+h1 {
+  color: #5e81ac;
+  font-size: 60pt;
+}
+
+h2 {
+  color: #5e81ac;
+}
+
+a {
+  color: #88c0d0;
+}
+
+.content {
+  max-width: 720px;
+  margin: auto;
+}
+
+.subtitle {
+  color: #81a1c1;
+}
+
+.hidden {
+  color: #d8dee9;
+}
