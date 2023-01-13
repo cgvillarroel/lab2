@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Poppins&display=swap');
+
 body {
   margin: 2em;
   background-color: #eceff4;
   color: #434c5e;
   font-size: 18pt;
-  font-family: "Segoe UI Semilight", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .content {
@@ -15,35 +17,40 @@ body {
   color: #d8dee9;
 }
 
-h1 {
+#header {
+  font-family: "Poppins", sans-serif;
+}
+
+#header h1 {
   color: #5e81ac;
   font-size: 60pt;
   font-weight: Normal;
-  margin-bottom: -0.4em;
+  margin-bottom: -0.5em;
 }
 
-.subtitle {
+#header p {
   color: #4c566a;
+}
+
+#header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 14pt;
+}
+
+#header ul li {
+  display: block;
+  float: left;
 }
 
 hr {
   color: #81a1c1;
 }
 
-h2 {
+h1 {
   color: #5e81ac;
-}
-
-#nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-#nav ul li {
-  display: block;
-  float: left;
 }
 
 #carousel {
