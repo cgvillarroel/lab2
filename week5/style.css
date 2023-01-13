@@ -3,12 +3,31 @@ body {
   background-color: #eceff4;
   color: #434c5e;
   font-size: 18pt;
+  font-family: "Segoe UI Semilight", sans-serif;
+}
+
+.content {
+  max-width: 720px;
+  margin: auto;
+}
+
+.hidden {
+  color: #d8dee9;
 }
 
 h1 {
   color: #5e81ac;
   font-size: 60pt;
-  margin-bottom: -0.25em;
+  font-weight: Normal;
+  margin-bottom: -0.4em;
+}
+
+.subtitle {
+  color: #4c566a;
+}
+
+hr {
+  color: #81a1c1;
 }
 
 h2 {
@@ -27,24 +46,16 @@ h2 {
   float: left;
 }
 
-#nav ul li a:hover {
-  text-decoration: none;
+#carousel {
+  text-align: center;
 }
 
 a {
-  color: #88c0d0;
+  color: #5e81ac;
+  text-decoration: none;
   margin-right: 1em;
 }
 
-.content {
-  max-width: 720px;
-  margin: auto;
-}
-
-.subtitle {
+a:hover {
   color: #81a1c1;
-}
-
-.hidden {
-  color: #d8dee9;
 }
