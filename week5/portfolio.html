@@ -16,9 +16,29 @@
         </ul>
         <hr />
       </div>
+      <h1>Portfolio</h1>
+      <p>None of these were made with the intent of being in a portfolio. These were just little side projects meant for my own use.</p>
       <div id="carousel">
-        <h1>Carousel Placeholder</h1>
+        <a href="https://github.com/chusecubr/rm-docket" target="_blank">
+          <img class="carousel_img" src="images/carousel0.png" />
+        </a>
+        <a href="https://github.com/chusecubr/dotfiles" target="_blank">
+          <img class="carousel_img" src="images/carousel1.png" />
+        </a>
+      </div>
+      <div id="carousel_nav">
+        <a onclick="move_slide(-1)">&lt</a>
+        <a class="carousel_btn" onclick="show_slide(0)">1</a>
+        <a class="carousel_btn" onclick="show_slide(1)">2</a>
+        <a onclick="move_slide(1)">&gt</a>
+      </div>
+      <div id="carousel_caption">
+        <h2 class="carousel_title">Docket</h2>
+        <p class="carousel_desc">An interactive desktop display</p>
+        <h2 class="carousel_title">dotfiles</h2>
+        <p class="carousel_desc">My WIP linux rice (configuration/setup)</p>
       </div>
     </div>
+    <script src="carousel.js"></script>
   </body>
 </html>
