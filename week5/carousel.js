@@ -24,7 +24,7 @@ function show_slide(slide_idx) {
 
 function move_slide(dir) {
     // javascript can't handle negative modulus
-    dir = dir == 1 ? 1 : slides.length + 1;
+    dir = slides.length + dir;
     current_slide = (current_slide + dir) % slides.length;
     show_slide (current_slide)
 }
