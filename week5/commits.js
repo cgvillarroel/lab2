@@ -1,5 +1,5 @@
 function get_commit_info() {
-  return [
+  data = [
     {
       name: "Commit 1",
       info: "Placeholder details about commit 1"
@@ -12,12 +12,19 @@ function get_commit_info() {
       name: "Commit 3",
       info: "Placeholder details about commit 3"
     }
-  ];
+  ]
+
+  // simulate waiting for server response
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 1000);
+  });
 }
 
-function generate_html() {
-  commits = get_commit_info();
-  newHTML = ""
+async function generate_html() {
+  commits = await get_commit_info();
+  newHTML = "";
   for (commit of commits) {
     newHTML +=
       `
@@ -28,4 +35,8 @@ function generate_html() {
   return newHTML;
 }
 
-document.getElementById("commits").innerHTML = generate_html();
+async function update_html() {
+  document.getElementById("commits").innerHTML = await generate_html();
+}
+
+update_html();
