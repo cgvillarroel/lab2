@@ -1,18 +1,19 @@
-function get_commit_info() {
-  data = [
-    {
-      name: "Commit 1",
-      info: "Placeholder details about commit 1"
-    },
-    {
-      name: "Commit 2",
-      info: "Placeholder details about commit 2"
-    },
-    {
-      name: "Commit 3",
-      info: "Placeholder details about commit 3"
-    }
-  ]
+function simulate_server_response() {
+  data = `
+    [
+      {
+        "name": "Commit 1",
+        "info": "Placeholder details about commit 1"
+      },
+      {
+        "name": "Commit 2",
+        "info": "Placeholder details about commit 2"
+      },
+      {
+        "name": "Commit 3",
+        "info": "Placeholder details about commit 3"
+      }
+    ]`;
 
   // simulate waiting for server response
   return new Promise((resolve, reject) => {
@@ -22,15 +23,19 @@ function get_commit_info() {
   });
 }
 
+async function get_recent_events() {
+  response = await simulate_server_response();
+  commits = await JSON.parse(response);
+  return commits;
+}
+
 async function generate_html() {
-  commits = await get_commit_info();
+  commits = await get_recent_events();
   newHTML = "";
   for (commit of commits) {
-    newHTML +=
-      `
+    newHTML += `
       <h3>${commit.name}</h3>
-      <p>${commit.info}</p>
-      `;
+      <p>${commit.info}</p>`;
   }
   return newHTML;
 }
