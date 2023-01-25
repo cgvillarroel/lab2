@@ -38,7 +38,7 @@ async function generate_html() {
   newHTML = "";
   for (commit of commits) {
     newHTML += `
-      <h3><a href="${commit.url}" target="_blank">${commit.message}</a></h3>
+      <a href="${commit.url}" target="_blank"><b>${commit.message}</b></a>
       <ul>
         <li>
           <a href="${commit.repo.url}" target="_blank">${commit.repo.name}</a>
