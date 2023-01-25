@@ -1,41 +1,49 @@
-function simulate_server_response() {
-  data = `
-    [
-      {
-        "name": "Commit 1",
-        "info": "Placeholder details about commit 1"
-      },
-      {
-        "name": "Commit 2",
-        "info": "Placeholder details about commit 2"
-      },
-      {
-        "name": "Commit 3",
-        "info": "Placeholder details about commit 3"
-      }
-    ]`;
+function parse_commits(events) {
+  commits = [];
+  for (event_obj of events) {
+    if (event_obj.type != "PushEvent") {
+      continue;
+    }
 
-  // simulate waiting for server response
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(data);
-    }, 1000);
-  });
+    event_repo = {
+      name: event_obj.repo.name,
+      url: event_obj.repo.url
+        .replace("api.github.com/repos", "github.com")
+    }
+
+    for (commit of event_obj.payload.commits) {
+      commits.push({
+        repo: event_repo,
+        message: commit.message,
+        url: commit.url
+          .replace(`api.github.com/repos/${event_repo.name}/commits`,
+            `github.com/${event_repo.name}/commit`)
+      });
+    }
+  }
+  return  commits;
 }
 
-async function get_recent_events() {
-  response = await simulate_server_response();
-  commits = await JSON.parse(response);
+async function get_recent_events(username) {
+  const url = `https://api.github.com/users/${username}/events/public`;
+  response = await fetch(url);
+  commits = await response.json();
   return commits;
 }
 
 async function generate_html() {
-  commits = await get_recent_events();
+  const username = "ChuseCubr"
+  events = await get_recent_events(username);
+  commits = parse_commits(events);
   newHTML = "";
   for (commit of commits) {
     newHTML += `
-      <h3>${commit.name}</h3>
-      <p>${commit.info}</p>`;
+      <a href="${commit.url}" target="_blank"><h3>${commit.message}</h3></a>
+      <ul>
+        <li>
+          <a href="${commit.repo.url}" target="_blank">${commit.repo.name}</a>
+        </li>
+      </ul>`;
   }
   return newHTML;
 }
