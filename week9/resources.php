@@ -3,20 +3,14 @@
 <html lang="en">
   <head>
     <title>Chuse</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+      <?php include "style.css"?>
+    </style>
   </head>
   <body>
     <div class="content">
-      <div id="header">
-        <h1><a href="index.php">Chase</a></h1>
-        <p>BSCS - SS211<p>
-        <ul>
-          <li><a href="works.php">Works</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="resources.php">Resources</a></li>
-        </ul>
-        <hr />
-      </div>
+      <?php include "header.html"?>
+      <hr />
       <h1>Resources</h1>
       <h2>Learning</h2> 
       <ol>

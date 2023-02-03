@@ -3,21 +3,15 @@
 <html lang="en">
   <head>
     <title>Chuse</title>
-    <link rel="stylesheet" href="index.css">
+    <style>
+      <?php include "index.css"?>
+    </style>
   </head>
   <body>
     <div class="outer">
       <div class="inner">
         <div class="content">
-          <div id="header">
-            <h1><a href="index.php">Chase</a></h1>
-            <p>BSCS - SS211<p>
-            <ul>
-              <li><a href="works.php">Works</a></li>
-              <li><a href="about.php">About</a></li>
-              <li><a href="resources.php">Resources</a></li>
-            </ul>
-          </div>
+          <?php include "header.html"?>
         </div>
       </div>
     </div>

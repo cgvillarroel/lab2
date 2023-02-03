@@ -9,17 +9,8 @@
 
 <body>
   <div class="content">
-    <div id="header">
-      <h1><a href="index.php">Chase</a></h1>
-      <p>BSCS - SS211
-      <p>
-      <ul>
-        <li><a href="works.php">Works</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a href="resources.php">Resources</a></li>
-      </ul>
-      <hr />
-    </div>
+    <?php include "header.html"?>
+    <hr />
     <?php
     // define variables and set to empty values
     $nameErr = $emailErr = $genderErr = $websiteErr = "";
