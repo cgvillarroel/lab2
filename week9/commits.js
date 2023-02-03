@@ -21,7 +21,7 @@ function parse_commits(events) {
       });
     }
   }
-  return  commits;
+  return commits;
 }
 
 async function get_recent_events(username) {

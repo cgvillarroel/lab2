@@ -9,7 +9,7 @@
 
 <body>
   <div class="content">
-    <?php include "header.html"?>
+    <?php include "header.html" ?>
     <hr />
     <?php
     // define variables and set to empty values
