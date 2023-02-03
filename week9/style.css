@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Poppins&display=swap');
+
+body {
+  margin: 2em;
+  background-color: #eceff4;
+  color: #434c5e;
+  font-size: 18pt;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.content {
+  max-width: 720px;
+  margin: auto;
+}
+
+.hidden {
+  color: #d8dee9;
+}
+
+#header {
+  font-family: "Poppins", sans-serif;
+}
+
+#header h1 {
+  color: #5e81ac;
+  font-size: 60pt;
+  font-weight: Normal;
+  margin-bottom: -0.5em;
+}
+
+#header p {
+  color: #4c566a;
+}
+
+#header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 14pt;
+}
+
+#header ul li {
+  display: block;
+  float: left;
+}
+
+#carousel a {
+  padding: 0;
+  margin: 0;
+}
+
+#carousel_nav {
+  color: #434c5e;
+  text-align: center;
+  margin-bottom: -0.5em;
+}
+
+#carousel_nav a {
+  display: inline;
+  padding: 1em;
+  margin: 0;
+}
+
+#carousel_nav a:hover {
+  display: inline;
+  cursor: pointer;
+}
+
+#carousel_caption {
+  text-align: center;
+}
+
+hr {
+  color: #81a1c1;
+}
+
+h1 {
+  color: #5e81ac;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: #5e81ac;
+  text-decoration: none;
+  margin-right: 1em;
+}
+
+a:hover {
+  color: #81a1c1;
+}

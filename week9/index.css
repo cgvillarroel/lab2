@@ -1,0 +1,40 @@
+@import "style.css";
+
+body {
+  color: #d8dee9;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("images/wallpaper.png");
+  background-size: cover;
+}
+
+.inner {
+  background-color: #2e3440a0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.content {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header p {
+  color: #d8dee9;
+}
+
+a {
+  color: #d8dee9;
+}
+
+a:hover {
+  color: #eceff4;
+}

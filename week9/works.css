@@ -1,0 +1,6 @@
+@import "style.css";
+
+#commits ul li {
+  margin-top: -0.75em;
+  font-size: 16pt;
+}
