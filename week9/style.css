@@ -92,3 +92,7 @@ a {
 a:hover {
   color: #81a1c1;
 }
+
+.error {
+  color: #bf616a;
+}
