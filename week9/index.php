@@ -10,12 +10,12 @@
       <div class="inner">
         <div class="content">
           <div id="header">
-            <h1><a href="index.html">Chase</a></h1>
+            <h1><a href="index.php">Chase</a></h1>
             <p>BSCS - SS211<p>
             <ul>
-              <li><a href="works.html">Works</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="resources.html">Resources</a></li>
+              <li><a href="works.php">Works</a></li>
+              <li><a href="about.php">About</a></li>
+              <li><a href="resources.php">Resources</a></li>
             </ul>
           </div>
         </div>
