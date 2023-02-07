@@ -20,9 +20,10 @@
     </p>
     <?php
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "myDB";
+    $thing = "webprogss211";
+    $username = $thing;
+    $password = $thing;
+    $dbname = $thing;
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -31,7 +32,7 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql_query = "SELECT id, name, email, website, comment, gender FROM MyGuests";
+    $sql_query = "SELECT id, name, email, website, comment, gender FROM cgvillarroel_myguests";
     $result = $conn->query($sql_query);
 
     if ($result === FALSE) {

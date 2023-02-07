@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+  <title>Chuse</title>
   <style>
     <?php include "style.css" ?>
   </style>
@@ -112,9 +113,9 @@
       // slap into mysql
       $servername = "localhost";
       $thing = "webprogss211";
-      $username = "root";
-      $password = "";
-      $dbname = "myDB";
+      $username = $thing;
+      $password = $thing;
+      $dbname = $thing;
 
       // create connection
       $conn = new mysqli($servername, $username, $password, $dbname);
@@ -125,7 +126,7 @@
 
       // too lazy to manually create table through phpMyAdmin,
       // just use IF NOT EXISTS
-      $create_query = "CREATE TABLE IF NOT EXISTS MyGuests (
+      $create_query = "CREATE TABLE IF NOT EXISTS cgvillarroel_myguests (
       id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       name VARCHAR(70) NOT NULL,
       email VARCHAR(50),
@@ -139,7 +140,7 @@
         echo "Error: " . $create_query . "<br>" . $conn->error;
       }
 
-      $insert_query = "INSERT INTO MyGuests (name, email, website, comment, gender)
+      $insert_query = "INSERT INTO cgvillarroel_myguests (name, email, website, comment, gender)
       VALUES ('$name', '$email', '$website', '$comment', '$gender')";
 
       if ($conn->query($insert_query) === TRUE) {
