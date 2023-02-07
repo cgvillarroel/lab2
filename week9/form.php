@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
 
 <head>
   <style>
@@ -69,7 +70,9 @@
     }
     ?>
 
-    <h1>PHP Form Validation Example</h1>
+    <h1>Guest Registration Form</h1>
+    <p><a href="guests.php">Return to guest list.</a>
+    </p>
     <p><span class="error">* required field</span></p>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
       Name: <input type="text" name="name" value="<?php echo $name; ?>">
@@ -93,16 +96,60 @@
     </form>
 
     <?php
-    echo "<h2>Your Input:</h2>";
-    echo $name;
-    echo "<br>";
-    echo $email;
-    echo "<br>";
-    echo $website;
-    echo "<br>";
-    echo $comment;
-    echo "<br>";
-    echo $gender;
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      echo "<h2>Your Input:</h2>";
+      echo $name;
+      echo "<br>";
+      echo $email;
+      echo "<br>";
+      echo $website;
+      echo "<br>";
+      echo $comment;
+      echo "<br>";
+      echo $gender;
+      echo "<br>";
+
+      // slap into mysql
+      $servername = "localhost";
+      $thing = "webprogss211";
+      $username = "root";
+      $password = "";
+      $dbname = "myDB";
+
+      // create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
+      // check connection
+      if ($conn->connect_error) {
+        die("connection failed: " . $conn->connect_error);
+      }
+
+      // too lazy to manually create table through phpMyAdmin,
+      // just use IF NOT EXISTS
+      $create_query = "CREATE TABLE IF NOT EXISTS MyGuests (
+      id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      name VARCHAR(70) NOT NULL,
+      email VARCHAR(50),
+      website VARCHAR(100),
+      comment TEXT,
+      gender VARCHAR(6) NOT NULL,
+      reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      )";
+
+      if ($conn->query($create_query) === FALSE) {
+        echo "Error: " . $create_query . "<br>" . $conn->error;
+      }
+
+      $insert_query = "INSERT INTO MyGuests (name, email, website, comment, gender)
+      VALUES ('$name', '$email', '$website', '$comment', '$gender')";
+
+      if ($conn->query($insert_query) === TRUE) {
+        echo "New record created successfully";
+      } else {
+        echo "Error: " . $insert_query . "<br>" . $conn->error;
+      }
+
+      $conn->close();
+    }
     ?>
   </div>
 </body>
