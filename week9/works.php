@@ -5,7 +5,7 @@
 <head>
   <title>Chuse</title>
   <style>
-    <?php include "style.css" ?>
+    <?php include "css/style.css" ?>
   </style>
 </head>
 

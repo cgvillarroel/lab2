@@ -5,7 +5,7 @@
 <head>
   <title>Chuse</title>
   <style>
-    <?php include "style.css" ?>
+    <?php include "css/style.css" ?>
   </style>
 </head>
 
@@ -112,10 +112,9 @@
 
       // slap into mysql
       $servername = "localhost";
-      $thing = "webprogss211";
-      $username = $thing;
-      $password = $thing;
-      $dbname = $thing;
+      $username = "root";
+      $password = "";
+      $dbname ="myDB"; 
 
       // create connection
       $conn = new mysqli($servername, $username, $password, $dbname);
