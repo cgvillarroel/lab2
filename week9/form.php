@@ -111,10 +111,10 @@
       echo "<br>";
 
       // slap into mysql
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname ="myDB"; 
+      $servername = "192.168.150.213";
+      $username = "webprogss211";
+      $password = "fancyR!ce36";
+      $dbname = "webprogss211";
 
       // create connection
       $conn = new mysqli($servername, $username, $password, $dbname);

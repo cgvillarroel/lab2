@@ -41,8 +41,8 @@
     <div id="commits">
     </div>
   </div>
-  <script src="carousel.js"></script>
-  <script src="commits.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/commits.js"></script>
 </body>
 
 </html>
